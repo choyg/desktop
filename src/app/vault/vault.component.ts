@@ -87,6 +87,16 @@ export class VaultComponent implements OnInit, OnDestroy {
                 let detectChanges = true;
 
                 switch (message.command) {
+                    case 'copyPassword':
+                        if (!this.cipherId) {
+                            break;
+                        }
+                        const cipher = this.ciphersComponent.ciphers.find((c) => c.id === this.cipherId);
+                        if (!cipher.login.password) {
+                            break;
+                        }
+                        this.copyValue(cipher.login.password, 'password');
+                        break;
                     case 'newLogin':
                         this.addCipher(CipherType.Login);
                         break;

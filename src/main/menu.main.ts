@@ -38,8 +38,8 @@ export class MenuMain extends BaseMenu {
     searchVault: MenuItem;
     unlockedRequiredMenuItems: MenuItem[] = [];
 
-    constructor(private main: Main) {
-        super(main.i18nService, main.windowMain);
+    constructor(protected main: Main) {
+        super(main, main.i18nService, main.windowMain);
     }
 
     init() {
@@ -282,7 +282,7 @@ export class MenuMain extends BaseMenu {
                             {
                                 label: this.main.i18nService.t('typeCard'),
                                 click: () => this.main.messagingService.send('newCard'),
-                                accelerator: 'CmdOrCtrl+Shift+C',
+                                // accelerator: 'CmdOrCtrl+Shift+C',
                             },
                             {
                                 label: this.main.i18nService.t('typeIdentity'),
