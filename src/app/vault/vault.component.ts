@@ -34,10 +34,12 @@ import { PasswordHistoryComponent } from './password-history.component';
 import { ShareComponent } from './share.component';
 
 import { CipherType } from 'jslib/enums/cipherType';
+import { EventType } from 'jslib/enums/eventType';
 
 import { CipherView } from 'jslib/models/view/cipherView';
 import { FolderView } from 'jslib/models/view/folderView';
 
+import { EventService } from 'jslib/abstractions/event.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
@@ -71,6 +73,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     addType: CipherType = null;
     addOrganizationId: string = null;
     addCollectionIds: string[] = null;
+    showingModal = false;
 
     private modal: ModalComponent = null;
 
@@ -79,7 +82,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
         private ngZone: NgZone, private syncService: SyncService, private analytics: Angulartics2,
         private toasterService: ToasterService, private messagingService: MessagingService,
-        private platformUtilsService: PlatformUtilsService) { }
+        private platformUtilsService: PlatformUtilsService, private eventService: EventService) { }
 
     async ngOnInit() {
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
@@ -152,6 +155,12 @@ export class VaultComponent implements OnInit, OnDestroy {
                     case 'refreshCiphers':
                         this.ciphersComponent.refresh();
                         break;
+                    case 'modalShown':
+                        this.showingModal = true;
+                        break;
+                    case 'modalClosed':
+                        this.showingModal = false;
+                        break;
                     default:
                         detectChanges = false;
                         break;
@@ -166,19 +175,26 @@ export class VaultComponent implements OnInit, OnDestroy {
         if (!this.syncService.syncInProgress) {
             await this.load();
         }
+        document.body.classList.remove('layout_frontend');
     }
 
     ngOnDestroy() {
         this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+        document.body.classList.add('layout_frontend');
     }
 
     async load() {
+        let loaded = false;
         const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
+            if (loaded) {
+                return;
+            }
+            loaded = true;
             await this.groupingsComponent.load();
 
             if (params == null) {
                 this.groupingsComponent.selectedAll = true;
-                await this.ciphersComponent.load();
+                await this.ciphersComponent.reload();
             } else {
                 if (params.cipherId) {
                     const cipherView = new CipherView();
@@ -208,7 +224,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                     await this.filterCollection(params.collectionId);
                 } else {
                     this.groupingsComponent.selectedAll = true;
-                    await this.ciphersComponent.load();
+                    await this.ciphersComponent.reload();
                 }
             }
             if (queryParamsSub != null) {
@@ -262,7 +278,10 @@ export class VaultComponent implements OnInit, OnDestroy {
                 if (cipher.login.password != null) {
                     menu.append(new remote.MenuItem({
                         label: this.i18nService.t('copyPassword'),
-                        click: () => this.copyValue(cipher.login.password, 'password'),
+                        click: () => {
+                            this.copyValue(cipher.login.password, 'password');
+                            this.eventService.collect(EventType.Cipher_ClientCopiedPassword, cipher.id);
+                        },
                     }));
                 }
                 break;
@@ -279,7 +298,10 @@ export class VaultComponent implements OnInit, OnDestroy {
                 if (cipher.card.code != null) {
                     menu.append(new remote.MenuItem({
                         label: this.i18nService.t('copySecurityCode'),
-                        click: () => this.copyValue(cipher.card.code, 'securityCode'),
+                        click: () => {
+                            this.copyValue(cipher.card.code, 'securityCode');
+                            this.eventService.collect(EventType.Cipher_ClientCopiedCardCode, cipher.id);
+                        },
                     }));
                 }
                 break;
@@ -353,9 +375,8 @@ export class VaultComponent implements OnInit, OnDestroy {
 
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.attachmentsModalRef.createComponent(factory).instance;
-        const childComponent = this.modal.show<AttachmentsComponent>(AttachmentsComponent, this.attachmentsModalRef);
-
-        childComponent.cipherId = cipher.id;
+        const childComponent = this.modal.show<AttachmentsComponent>(AttachmentsComponent, this.attachmentsModalRef,
+            true, (comp) => comp.cipherId = cipher.id);
         let madeAttachmentChanges = false;
         childComponent.onUploadedAttachment.subscribe(() => madeAttachmentChanges = true);
         childComponent.onDeletedAttachment.subscribe(() => madeAttachmentChanges = true);
@@ -376,8 +397,8 @@ export class VaultComponent implements OnInit, OnDestroy {
 
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.shareModalRef.createComponent(factory).instance;
-        const childComponent = this.modal.show<ShareComponent>(ShareComponent, this.shareModalRef);
-        childComponent.cipherId = cipher.id;
+        const childComponent = this.modal.show<ShareComponent>(ShareComponent, this.shareModalRef, true,
+            (comp) => comp.cipherId = cipher.id);
 
         childComponent.onSharedCipher.subscribe(async () => {
             this.modal.close();
@@ -396,8 +417,8 @@ export class VaultComponent implements OnInit, OnDestroy {
 
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.collectionsModalRef.createComponent(factory).instance;
-        const childComponent = this.modal.show<CollectionsComponent>(CollectionsComponent, this.collectionsModalRef);
-        childComponent.cipherId = cipher.id;
+        const childComponent = this.modal.show<CollectionsComponent>(CollectionsComponent, this.collectionsModalRef,
+            true, (comp) => comp.cipherId = cipher.id);
 
         childComponent.onSavedCollections.subscribe(() => {
             this.modal.close();
@@ -415,10 +436,8 @@ export class VaultComponent implements OnInit, OnDestroy {
 
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.passwordHistoryModalRef.createComponent(factory).instance;
-        const childComponent = this.modal.show<PasswordHistoryComponent>(PasswordHistoryComponent,
-            this.passwordHistoryModalRef);
-
-        childComponent.cipherId = cipher.id;
+        this.modal.show<PasswordHistoryComponent>(PasswordHistoryComponent,
+            this.passwordHistoryModalRef, true, (comp) => comp.cipherId = cipher.id);
         this.modal.onClosed.subscribe(async () => {
             this.modal = null;
         });
@@ -432,14 +451,14 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     async clearGroupingFilters() {
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchVault');
-        await this.ciphersComponent.load();
+        await this.ciphersComponent.reload();
         this.clearFilters();
         this.go();
     }
 
     async filterFavorites() {
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchFavorites');
-        await this.ciphersComponent.load((c) => c.favorite);
+        await this.ciphersComponent.reload((c) => c.favorite);
         this.clearFilters();
         this.favorites = true;
         this.go();
@@ -447,7 +466,7 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     async filterCipherType(type: CipherType) {
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchType');
-        await this.ciphersComponent.load((c) => c.type === type);
+        await this.ciphersComponent.reload((c) => c.type === type);
         this.clearFilters();
         this.type = type;
         this.go();
@@ -456,7 +475,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     async filterFolder(folderId: string) {
         folderId = folderId === 'none' ? null : folderId;
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchFolder');
-        await this.ciphersComponent.load((c) => c.folderId === folderId);
+        await this.ciphersComponent.reload((c) => c.folderId === folderId);
         this.clearFilters();
         this.folderId = folderId == null ? 'none' : folderId;
         this.go();
@@ -464,7 +483,8 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     async filterCollection(collectionId: string) {
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchCollection');
-        await this.ciphersComponent.load((c) => c.collectionIds != null && c.collectionIds.indexOf(collectionId) > -1);
+        await this.ciphersComponent.reload((c) => c.collectionIds != null &&
+            c.collectionIds.indexOf(collectionId) > -1);
         this.clearFilters();
         this.collectionId = collectionId;
         this.updateCollectionProperties();
@@ -479,9 +499,8 @@ export class VaultComponent implements OnInit, OnDestroy {
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.passwordGeneratorModalRef.createComponent(factory).instance;
         const childComponent = this.modal.show<PasswordGeneratorComponent>(PasswordGeneratorComponent,
-            this.passwordGeneratorModalRef);
+            this.passwordGeneratorModalRef, true, (comp) => comp.showSelect = showSelect);
 
-        childComponent.showSelect = showSelect;
         childComponent.onSelected.subscribe((password: string) => {
             this.modal.close();
             if (this.addEditComponent != null && this.addEditComponent.cipher != null &&
@@ -521,9 +540,8 @@ export class VaultComponent implements OnInit, OnDestroy {
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.folderAddEditModalRef.createComponent(factory).instance;
         const childComponent = this.modal.show<FolderAddEditComponent>(
-            FolderAddEditComponent, this.folderAddEditModalRef);
+            FolderAddEditComponent, this.folderAddEditModalRef, true, (comp) => comp.folderId = null);
 
-        childComponent.folderId = null;
         childComponent.onSavedFolder.subscribe(async (folder: FolderView) => {
             this.modal.close();
             await this.groupingsComponent.loadFolders();
@@ -542,9 +560,8 @@ export class VaultComponent implements OnInit, OnDestroy {
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.folderAddEditModalRef.createComponent(factory).instance;
         const childComponent = this.modal.show<FolderAddEditComponent>(
-            FolderAddEditComponent, this.folderAddEditModalRef);
+            FolderAddEditComponent, this.folderAddEditModalRef, true, (comp) => comp.folderId = folderId);
 
-        childComponent.folderId = folderId;
         childComponent.onSavedFolder.subscribe(async (folder: FolderView) => {
             this.modal.close();
             await this.groupingsComponent.loadFolders();

@@ -2,6 +2,9 @@
   "bitwarden": {
     "message": "Bitwarden"
   },
+  "filters": {
+    "message": "Filtres"
+  },
   "allItems": {
     "message": "Tous les éléments"
   },
@@ -297,6 +300,9 @@
   "value": {
     "message": "Valeur"
   },
+  "dragToSort": {
+    "message": "Glissez pour trier"
+  },
   "cfTypeText": {
     "message": "Texte"
   },
@@ -337,7 +343,7 @@
     "message": "Êtes-vous sûr(e) de vouloir écraser le mot de passe actuel ?"
   },
   "noneFolder": {
-    "message": "Pas de dossier",
+    "message": "Aucun dossier",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
@@ -364,6 +370,13 @@
   "wordSeparator": {
     "message": "Séparateur de mots"
   },
+  "capitalize": {
+    "message": "Mettre la première lettre de chaque mot en majuscule",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Inclure un chiffre"
+  },
   "close": {
     "message": "Fermer"
   },
@@ -387,7 +400,7 @@
     "message": "Rechercher dans les favoris"
   },
   "searchType": {
-    "message": "Recherche par type",
+    "message": "Rechercher dans le type",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -598,7 +611,7 @@
     "message": "Environnement auto-hébergé"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Spécifiez l'URL de base de votre installation de Bitwarden hébergée en interne."
+    "message": "Spécifiez l'URL de base de votre installation Bitwarden auto-hébergée."
   },
   "customEnvironment": {
     "message": "Environnement personnalisé"
@@ -734,12 +747,16 @@
   "unlock": {
     "message": "Déverrouiller"
   },
-  "loggedInAs": {
-    "message": "Connecté en tant que $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Connecté en tant que $EMAIL$ sur $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -991,7 +1008,8 @@
     "message": "Historique des mots de passe"
   },
   "clear": {
-    "message": "Effacer"
+    "message": "Effacer",
+    "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "Aucun mot de passe à afficher."
@@ -1136,6 +1154,10 @@
   "hideToTray": {
     "message": "Masquer"
   },
+  "alwaysOnTop": {
+    "message": "Toujours au premier plan",
+    "description": "Application window should always stay on top of other windows"
+  },
   "dateUpdated": {
     "message": "Mis à jour",
     "description": "ex. Date this item was updated"
@@ -1188,7 +1210,7 @@
     "message": "Mot de passe maître faible"
   },
   "weakMasterPasswordDesc": {
-    "message": "Le mot de passe maître que vous avez choisi est faible. Vous devriez utiliser un mot de passe (ou une phrase de passe) fort(e) pour protéger correctement votre compte Bitwarden. Êtes-vous certain de vouloir utiliser ce mot de passe maître ?"
+    "message": "Le mot de passe maître que vous avez choisi est faible. Vous devriez utiliser un mot de passe (ou une phrase secrète) fort(e) pour protéger correctement votre compte Bitwarden. Êtes-vous certain de vouloir utiliser ce mot de passe maître ?"
   },
   "pin": {
     "message": "Code PIN",
@@ -1211,5 +1233,20 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Verrouiller avec le mot de passe maître lors du redémarrage"
+  },
+  "preferences": {
+    "message": "Préférences"
+  },
+  "enableMenuBar": {
+    "message": "Activer l'icône dans la barre de menu"
+  },
+  "enableMenuBarDesc": {
+    "message": "Toujours afficher une icône dans la barre de menu."
+  },
+  "hideToMenuBar": {
+    "message": "Masquer dans la barre de menu"
+  },
+  "selectOneCollection": {
+    "message": "Vous devez sélectionner au moins une collection."
   }
 }

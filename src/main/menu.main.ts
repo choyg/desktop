@@ -74,10 +74,14 @@ export class MenuMain extends BaseMenu {
 
     updateApplicationMenuState(isAuthenticated: boolean, isLocked: boolean) {
         this.unlockedRequiredMenuItems.forEach((mi: MenuItem) => {
-            mi.enabled = isAuthenticated && !isLocked;
+            if (mi != null) {
+                mi.enabled = isAuthenticated && !isLocked;
+            }
         });
 
-        this.logOut.enabled = isAuthenticated;
+        if (this.logOut != null) {
+            this.logOut.enabled = isAuthenticated;
+        }
     }
 
     private initApplicationMenu() {
@@ -354,7 +358,7 @@ export class MenuMain extends BaseMenu {
         const firstMenuOptions: MenuItemConstructorOptions[] = [
             { type: 'separator' },
             {
-                label: this.main.i18nService.t('settings'),
+                label: this.main.i18nService.t(process.platform === 'darwin' ? 'preferences' : 'settings'),
                 id: 'settings',
                 click: () => this.main.messagingService.send('openSettings'),
                 accelerator: 'CmdOrCtrl+,',
@@ -437,12 +441,19 @@ export class MenuMain extends BaseMenu {
                 (template[template.length - 1].submenu as MenuItemConstructorOptions[]).concat(aboutMenuAdditions);
         }
 
-        (template[template.length - 2].submenu as MenuItemConstructorOptions[]).splice(1, 0, {
-            label: this.main.i18nService.t('hideToTray'),
-            click: () => this.main.messagingService.send('hideToTray'),
-            accelerator: 'CmdOrCtrl+Shift+M',
-        });
-
+        (template[template.length - 2].submenu as MenuItemConstructorOptions[]).splice(1, 0,
+            {
+                label: this.main.i18nService.t(process.platform === 'darwin' ? 'hideToMenuBar' : 'hideToTray'),
+                click: () => this.main.messagingService.send('hideToTray'),
+                accelerator: 'CmdOrCtrl+Shift+M',
+            },
+            {
+                type: 'checkbox',
+                label: this.main.i18nService.t('alwaysOnTop'),
+                checked: this.windowMain.win.isAlwaysOnTop(),
+                click: () => this.main.windowMain.toggleAlwaysOnTop(),
+                accelerator: 'CmdOrCtrl+Shift+T',
+            });
         this.menu = Menu.buildFromTemplate(template);
         Menu.setApplicationMenu(this.menu);
     }

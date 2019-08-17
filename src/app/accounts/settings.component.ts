@@ -44,12 +44,18 @@ export class SettingsComponent implements OnInit {
     themeOptions: any[];
     clearClipboard: number;
     clearClipboardOptions: any[];
+    enableTrayText: string;
+    enableTrayDescText: string;
 
     constructor(private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
         private storageService: StorageService, private lockService: LockService,
         private stateService: StateService, private messagingService: MessagingService,
         private userService: UserService, private cryptoService: CryptoService) {
+        const trayKey = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop ?
+            'enableMenuBar' : 'enableTray';
+        this.enableTrayText = this.i18nService.t(trayKey);
+        this.enableTrayDescText = this.i18nService.t(trayKey + 'Desc');
         this.lockOptions = [
             // { name: i18nService.t('immediately'), value: 0 },
             { name: i18nService.t('oneMinute'), value: 1 },
@@ -60,10 +66,16 @@ export class SettingsComponent implements OnInit {
             { name: i18nService.t('fourHours'), value: 240 },
             { name: i18nService.t('onIdle'), value: -4 },
             { name: i18nService.t('onSleep'), value: -3 },
-            // { name: i18nService.t('onLocked'), value: -2 },
+        ];
+
+        if (this.platformUtilsService.getDevice() !== DeviceType.LinuxDesktop) {
+            this.lockOptions.push({ name: i18nService.t('onLocked'), value: -2 });
+        }
+
+        this.lockOptions = this.lockOptions.concat([
             { name: i18nService.t('onRestart'), value: -1 },
             { name: i18nService.t('never'), value: null },
-        ];
+        ]);
 
         const localeOptions: any[] = [];
         i18nService.supportedTranslationLocales.forEach((locale) => {

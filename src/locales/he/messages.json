@@ -3,70 +3,70 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "מסננים"
   },
   "allItems": {
-    "message": "All items"
+    "message": "כל הפריטים"
   },
   "favorites": {
-    "message": "Favourites"
+    "message": "מועדפים"
   },
   "types": {
-    "message": "Types"
+    "message": "סוגים"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "פרטי התחברות"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "כרטיס"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "זהות"
   },
   "typeSecureNote": {
-    "message": "Secure note"
+    "message": "תזכורת מאובטחת"
   },
   "folders": {
-    "message": "Folders"
+    "message": "תיקיות"
   },
   "collections": {
-    "message": "Collections"
+    "message": "אוספים"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "חפש כספת"
   },
   "addItem": {
-    "message": "Add item"
+    "message": "הוסף פריט"
   },
   "shared": {
-    "message": "Shared"
+    "message": "משותף"
   },
   "share": {
-    "message": "Share"
+    "message": "שתף"
   },
   "shareItem": {
-    "message": "Share item"
+    "message": "שתף פריט"
   },
   "sharedItem": {
-    "message": "Shared item"
+    "message": "פריט משותף"
   },
   "shareDesc": {
-    "message": "Choose an organisation that you wish to share this item with. Sharing transfers ownership of the item to the organisation. You will no longer be the direct owner of this item once it has been shared."
+    "message": "בחר ארגון שאיתו תרצה לשתף פריט זה. השיתוף מעביר את הבעלות על הפריט לארגון. אתה לא תהיה הבעלים הישיר של הפריט לאחר השיתוף."
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "קבצים מצורפים"
   },
   "viewItem": {
-    "message": "View item"
+    "message": "צפה בפריט"
   },
   "name": {
-    "message": "Name"
+    "message": "שם"
   },
   "uri": {
-    "message": "URI"
+    "message": "כתובת"
   },
   "uriPosition": {
-    "message": "URI $POSITION$",
+    "message": "כתובת $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -76,455 +76,455 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "כתובת חדשה"
   },
   "username": {
-    "message": "Username"
+    "message": "שם משתמש"
   },
   "password": {
-    "message": "Password"
+    "message": "סיסמה"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "משפט סיסמה"
   },
   "editItem": {
-    "message": "Edit item"
+    "message": "ערוך פריט"
   },
   "emailAddress": {
-    "message": "Email address"
+    "message": "כתובת אימייל"
   },
   "verificationCodeTotp": {
-    "message": "Verification code (TOTP)"
+    "message": "קוד אימות (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "אתר"
   },
   "notes": {
-    "message": "Notes"
+    "message": "פתקים"
   },
   "customFields": {
-    "message": "Custom fields"
+    "message": "שדות מותאמים אישית"
   },
   "launch": {
-    "message": "Launch"
+    "message": "פתח"
   },
   "copyValue": {
-    "message": "Copy value",
+    "message": "העתק ערך",
     "description": "Copy value to clipboard"
   },
   "toggleVisibility": {
-    "message": "Toggle visibility"
+    "message": "הצג או הסתר"
   },
   "toggleCollapse": {
-    "message": "Toggle collapse",
+    "message": "הצג או הסתר",
     "description": "Toggling an expand\/collapse state."
   },
   "cardholderName": {
-    "message": "Cardholder name"
+    "message": "שם בעל הכרטיס"
   },
   "number": {
-    "message": "Number"
+    "message": "מספר"
   },
   "brand": {
-    "message": "Brand"
+    "message": "מותג"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "תוקף"
   },
   "securityCode": {
-    "message": "Security code"
+    "message": "קוד אבטחה"
   },
   "identityName": {
-    "message": "Identity name"
+    "message": "שם זהות"
   },
   "company": {
-    "message": "Company"
+    "message": "חברה"
   },
   "ssn": {
-    "message": "National Insurance number"
+    "message": "מספר ביטוח לאומי"
   },
   "passportNumber": {
-    "message": "Passport number"
+    "message": "מספר דרכון"
   },
   "licenseNumber": {
-    "message": "Licence number"
+    "message": "מספר רשיון"
   },
   "email": {
-    "message": "Email"
+    "message": "אימייל"
   },
   "phone": {
-    "message": "Phone"
+    "message": "טלפון"
   },
   "address": {
-    "message": "Address"
+    "message": "כתובת"
   },
   "premiumRequired": {
-    "message": "Premium required"
+    "message": "נדרש חשבון פרימיום"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "בכדי להשתמש ביכולת זו יש צורך בחשבון פרמיום."
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "אירעה שגיאה."
   },
   "error": {
-    "message": "Error"
+    "message": "שגיאה"
   },
   "january": {
-    "message": "January"
+    "message": "ינואר"
   },
   "february": {
-    "message": "February"
+    "message": "פברואר"
   },
   "march": {
-    "message": "March"
+    "message": "מרץ"
   },
   "april": {
-    "message": "April"
+    "message": "אפריל"
   },
   "may": {
-    "message": "May"
+    "message": "מאי"
   },
   "june": {
-    "message": "June"
+    "message": "יוני"
   },
   "july": {
-    "message": "July"
+    "message": "יולי"
   },
   "august": {
-    "message": "August"
+    "message": "אוגוסט"
   },
   "september": {
-    "message": "September"
+    "message": "ספטמבר"
   },
   "october": {
-    "message": "October"
+    "message": "אוקטובר"
   },
   "november": {
-    "message": "November"
+    "message": "נובמבר"
   },
   "december": {
-    "message": "December"
+    "message": "דצמבר"
   },
   "ex": {
-    "message": "e.g.",
+    "message": "לדוגמא",
     "description": "Short abbreviation for 'example'."
   },
   "title": {
-    "message": "Title"
+    "message": "תואר"
   },
   "mr": {
-    "message": "Mr"
+    "message": "מר"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "גברת"
   },
   "ms": {
-    "message": "Ms"
+    "message": "העלמה"
   },
   "dr": {
-    "message": "Dr"
+    "message": "דוקטור"
   },
   "expirationMonth": {
-    "message": "Expiration month"
+    "message": "תוקף אשראי - חודש"
   },
   "expirationYear": {
-    "message": "Expiration year"
+    "message": "תוקף אשראי - שנה"
   },
   "select": {
-    "message": "Select"
+    "message": "בחר"
   },
   "other": {
-    "message": "Other"
+    "message": "אחר"
   },
   "generatePassword": {
-    "message": "Generate password"
+    "message": "צור סיסמה"
   },
   "type": {
-    "message": "Type"
+    "message": "סוג"
   },
   "firstName": {
-    "message": "First name"
+    "message": "שם פרטי"
   },
   "middleName": {
-    "message": "Middle name"
+    "message": "שם אמצעי"
   },
   "lastName": {
-    "message": "Last name"
+    "message": "שם משפחה"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "כתובת 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "כתובת 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "כתובת 3"
   },
   "cityTown": {
-    "message": "City \/ town"
+    "message": "עיר \\ יישוב"
   },
   "stateProvince": {
-    "message": "County"
+    "message": "מדינה \\ מחוז"
   },
   "zipPostalCode": {
-    "message": "Postcode"
+    "message": "מיקוד"
   },
   "country": {
-    "message": "Country"
+    "message": "מדינה"
   },
   "save": {
-    "message": "Save"
+    "message": "שמור"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "ביטול"
   },
   "delete": {
-    "message": "Delete"
+    "message": "מחק"
   },
   "favorite": {
-    "message": "Favourite"
+    "message": "מועדף"
   },
   "edit": {
-    "message": "Edit"
+    "message": "ערוך"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator key (TOTP)"
+    "message": "מפתח אימות (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "תיקייה"
   },
   "newCustomField": {
-    "message": "New custom field"
+    "message": "שדה מותאם אישית חדש"
   },
   "value": {
-    "message": "Value"
+    "message": "ערך"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "גרור כדי למיין"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "טקסט"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "מוסתר"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "אמת או שקר"
   },
   "remove": {
-    "message": "Remove"
+    "message": "הסר"
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "דרוש שם."
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "פריט שהתווסף"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "פריט שנערך"
   },
   "deleteItem": {
-    "message": "Delete item"
+    "message": "מחק פריט"
   },
   "deleteFolder": {
-    "message": "Delete folder"
+    "message": "מחק תיקייה"
   },
   "deleteAttachment": {
-    "message": "Delete attachment"
+    "message": "מחק קובץ מצורף"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "האם אתה בטוח שברצונך למחוק פריט זה?"
   },
   "deletedItem": {
-    "message": "Deleted item"
+    "message": "פריט שנמחק"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "האם אתה בטוח שברצונך לדרוס את הסיסמה הנוכחית?"
   },
   "noneFolder": {
-    "message": "No folder",
+    "message": "ללא תיקיה",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add folder"
+    "message": "הוסף תיקיה"
   },
   "editFolder": {
-    "message": "Edit folder"
+    "message": "ערוך תיקייה"
   },
   "regeneratePassword": {
-    "message": "Regenerate password"
+    "message": "צור סיסמה חדשה"
   },
   "copyPassword": {
-    "message": "Copy password"
+    "message": "העתק סיסמה"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "העתק שורת כתובת"
   },
   "length": {
-    "message": "Length"
+    "message": "אורך"
   },
   "numWords": {
-    "message": "Number of words"
+    "message": "מספר מילים"
   },
   "wordSeparator": {
-    "message": "Word separator"
+    "message": "מפריד מילים"
   },
   "capitalize": {
-    "message": "Capitalise",
+    "message": "הפוך אותיות ראשונות לגדולות",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include number"
+    "message": "כלול מספרים"
   },
   "close": {
-    "message": "Close"
+    "message": "סגור"
   },
   "minNumbers": {
-    "message": "Minimum numbers"
+    "message": "מינימום ספרות"
   },
   "minSpecial": {
-    "message": "Minimum special",
+    "message": "מינימום תווים מיוחדים",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid ambiguous characters"
+    "message": "המנע מאותיות ותווים דומים"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "חפש אוסף"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "חפש תיקייה"
   },
   "searchFavorites": {
-    "message": "Search favourites"
+    "message": "חפש מועדפים"
   },
   "searchType": {
-    "message": "Search type",
+    "message": "חפש סוג",
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add new attachment"
+    "message": "צרף קובץ חדש"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "קובץ מצורף שנמחק"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "האם אתה בטוח שברצונך למחוק קובץ מצורף זה?"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "הקובץ המצורף נשמר."
   },
   "file": {
-    "message": "File"
+    "message": "קובץ"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "בחירת קובץ."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "גודל הקובץ המירבי הוא 100 מגה."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "לא ניתן להשתמש ביכולת זו עד שתעדכן את מפתח ההצפנה שלך."
   },
   "options": {
-    "message": "Options"
+    "message": "אפשרויות"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "תיקיה שנערכה"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "תיקיה שנוספה"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "האם אתה בטוח שברצונך למחוק את התיקייה?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "תיקיה שנמחקה"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "היכנס או צור חשבון חדש כדי לגשת לכספת המאובטחת שלך."
   },
   "createAccount": {
-    "message": "Create account"
+    "message": "צור חשבון"
   },
   "logIn": {
-    "message": "Log in"
+    "message": "התחבר"
   },
   "submit": {
-    "message": "Submit"
+    "message": "שלח"
   },
   "masterPass": {
-    "message": "Master password"
+    "message": "סיסמה ראשית"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "הסיסמה הראשית היא הסיסמה שבאמצעותה תיגש לכספת שלך. חשוב מאוד שלא תשכח את הסיסמה הזו. אין שום דרך לשחזר אותה במקרה ושכחת אותה."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "ניתן להשתמש ברמז לסיסמה הראשית אם שכחת אותה."
   },
   "reTypeMasterPass": {
-    "message": "Re-type master password"
+    "message": "הקלד שוב סיסמה ראשית"
   },
   "masterPassHint": {
-    "message": "Master password hint (optional)"
+    "message": "רמז לסיסמה ראשית (אופציונאלי)"
   },
   "settings": {
-    "message": "Settings"
+    "message": "הגדרות"
   },
   "passwordHint": {
-    "message": "Password hint"
+    "message": "רמז לסיסמה"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "הכנס את כתובת האימייל שלך לקבלת רמז עבור הסיסמה הראשית."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "הצג את הרמז לסיסמה הראשית"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "נדרשת כתובת אימייל."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "כתובת אימייל לא תקינה."
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "יש להזין את הסיסמה הראשית."
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "הסיסמה הראשית חייבת להיות לפחות באורך 8 תווים."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "אימות סיסמה ראשית אינו תואם."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "החשבון החדש שלך נוצר בהצלחה! כעת ניתן להתחבר למערכת."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "שלחנו לך אימייל עם רמז לסיסמה הראשית."
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "אירעה שגיאה לא צפויה."
   },
   "itemInformation": {
-    "message": "Item information"
+    "message": "מידע על הפריט"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "אין פריטים להצגה ברשימה."
   },
   "verificationCode": {
-    "message": "Verification code"
+    "message": "קוד אימות"
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "נדרש קוד אימות."
   },
   "continue": {
-    "message": "Continue"
+    "message": "המשך"
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "הכנס את קוד האימות בן 6 הספרות מאפליקציית האימות שלך."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "הכנס את קוד האימות בן 6 הספרות שנשלח ל-$EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -533,7 +533,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "מייל אימות נשלח לכתובת $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -542,213 +542,213 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "זכור אותי"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "שלח שוב קוד אימות לאימייל"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "השתמש בשיטה אחרת עבור כניסה דו שלבית"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "הכנס את ה-YubiKey אל כניסת ה-USB במחשבך, ואז גע בכפתור שלו."
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "הכנס את מפתח האבטחה שלך אל כניסת ה-USB במחשבך. אם יש לו כפתור, גע בו."
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "איבדת גישה לכל ספקי האימות הדו-שלבי שלך? השתמש בקוד האימות כדי לבטל את הספקים הקיימים מתוך החשבון שלך."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery code"
+    "message": "קוד שחזור"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator app"
+    "message": "אפליקציית אימות"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "השתמש באפליקצית אימות (כמו לדוגמא Authy או Google Authenticator) לייצור סיסמאות אימות מבוססות זמן.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP security key"
+    "message": "מפתח אבטחה OTP של YubiKey"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "השתמש בYubiKey עבור גישה לחשבון שלך. עובד עם YubiKey בגירסאות 4, 4C, 4Nano, ומכשירי NEO."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "בצע אימות מול Duo Security באמצעות אפליקצית Duo לפלאפון, SMS, שיחת טלפון, או מפתח אבטחה U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organisation using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "בצע אימות מול Duo Security עבור הארגון שלך באמצעות אפליקצית Duo לפלאפון, SMS, שיחת טלפון, או מפתח אבטחה U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+    "message": "השתמש בכל מפתח אבטחה התומך בFIDO U2F עבור גישה לחשבונך."
   },
   "u2fTitle": {
-    "message": "FIDO U2F security key"
+    "message": "מפתח אבטחה FIDO U2F"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "אימייל"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "קודים לאימות יישלחו אליך באימייל."
   },
   "loginUnavailable": {
-    "message": "Login unavailable"
+    "message": "פרטי כניסה לא זמינים"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled. However, none of the configured two-step providers are supported by this device."
+    "message": "כניסה דו-שלבית פעילה בחשבון זה, אך אף אחד מספקי הכניסה הדו-שלבית לא נתמכים במכשיר זה."
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "אנא הוסף ספקים אחרים שיש להם תמיכה במכשירים נוספים (לדוגמא - אפליקציית אימות)."
   },
   "twoStepOptions": {
-    "message": "Two-step login options"
+    "message": "אפשרויות כניסה דו שלבית"
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted environment"
+    "message": "סביבה על שרתים מקומיים"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premise hosted Bitwarden installation."
+    "message": "הזן את כתובת השרת המקומי של Bitwarden."
   },
   "customEnvironment": {
-    "message": "Custom environment"
+    "message": "סביבה מותאמת אישית"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "למשתמשים מתקדמים. באפשרותך לציין את כתובת השרת עבור כל שירות בנפרד."
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "כתובת שרת"
   },
   "apiUrl": {
-    "message": "API server URL"
+    "message": "כתובת שרת הAPI"
   },
   "webVaultUrl": {
-    "message": "Web vault server URL"
+    "message": "כתובת שרת הכספת"
   },
   "identityUrl": {
-    "message": "Identity server URL"
+    "message": "כתובת שרת הזהות"
   },
   "notificationsUrl": {
-    "message": "Notifications server URL"
+    "message": "כתובת שרת הודעות"
   },
   "iconsUrl": {
-    "message": "Icons server URL"
+    "message": "כתובת שרת אייקונים"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "כתובות הסביבה נשמרו."
   },
   "ok": {
-    "message": "OK"
+    "message": "אישור"
   },
   "yes": {
-    "message": "Yes"
+    "message": "כן"
   },
   "no": {
-    "message": "No"
+    "message": "לא"
   },
   "overwritePassword": {
-    "message": "Overwrite password"
+    "message": "דרוס סיסמה"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "למידע נוסף"
   },
   "featureUnavailable": {
-    "message": "Feature unavailable"
+    "message": "יכולת זו לא זמינה"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "בוצעה יציאה"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "תוקף החיבור שלך הסתיים."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "האם אתה בטוח שברצונך להתנתק?"
   },
   "logOut": {
-    "message": "Log out"
+    "message": "התנתק"
   },
   "addNewLogin": {
-    "message": "Add new login"
+    "message": "הוסף פרטי כניסה חדשה"
   },
   "addNewItem": {
-    "message": "Add new item"
+    "message": "הוספת פריט חדש"
   },
   "addNewFolder": {
-    "message": "Add new folder"
+    "message": "הוספת תיקייה חדשה"
   },
   "view": {
-    "message": "View"
+    "message": "הצג"
   },
   "account": {
-    "message": "Account"
+    "message": "חשבון"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "טוען..."
   },
   "lockNow": {
-    "message": "Lock now"
+    "message": "נעל עכשיו"
   },
   "passwordGenerator": {
-    "message": "Password generator"
+    "message": "יוצר הסיסמאות"
   },
   "emailUs": {
-    "message": "Email us"
+    "message": "שלח לנו אימייל"
   },
   "visitOurWebsite": {
-    "message": "Visit our website"
+    "message": "בקרו באתר שלנו"
   },
   "fileBugReport": {
-    "message": "File a bug report"
+    "message": "דווח על באג"
   },
   "blog": {
-    "message": "Blog"
+    "message": "בלוג"
   },
   "followUs": {
-    "message": "Follow us"
+    "message": "עקוב אחרינו"
   },
   "syncVault": {
-    "message": "Sync vault"
+    "message": "סנכרן כספת"
   },
   "changeMasterPass": {
-    "message": "Change master password"
+    "message": "החלף סיסמה ראשית"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "באפשרותך לשנות את הסיסמה הראשית שלך דרך הכספת באתר bitwarden.com. האם ברצונך לפתוח את האתר כעת?"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint phrase",
+    "message": "סיסמת טביעת אצבע",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "הסיסמה של טביעת האצבעות בחשבון שלך",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Go to web vault"
+    "message": "עבור לכספת באתר"
   },
   "getMobileApp": {
-    "message": "Get mobile app"
+    "message": "הורד את האפליקציה לפלאפון"
   },
   "getBrowserExtension": {
-    "message": "Get browser extension"
+    "message": "הורד תוסף לדפדפן"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "הסינכרון הושלם"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "הסינכרון נכשל"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "הכספת שלך נעולה. הזן את הסיסמה הראשית שלך כדי להמשיך."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "בטל נעילה"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "מחובר כ $EMAIL$ באתר $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -761,138 +761,138 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "סיסמה ראשית שגויה"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "התחברות בשני-שלבים הופכת את החשבון שלך למאובטח יותר בכך שאתה נדרש לוודא בכל כניסה בעזרת מכשיר אחר כדוגמת מפתח אבטחה, תוכנת אימות, SMS, שיחת טלפון, או אימייל. ניתן להפעיל את \"התחברות בשני-שלבים\" בכספת שבאתר bitwarden.com. האם ברצונך לפתוח את האתר כעת?"
   },
   "twoStepLogin": {
-    "message": "Two-step login"
+    "message": "התחברות בשני-שלבים"
   },
   "lockOptions": {
-    "message": "Lock options"
+    "message": "אפשרויות נעילה"
   },
   "lockOptionsDesc": {
-    "message": "Choose when your vault locks. A locked vault requires that you re-enter your master password to access it again."
+    "message": "הגדר מתי הכספת שלך ננעלת. כספת נעולה דורשת שתזין את הסיסמה הראשית בכדי לגשת לפרטים שבתוכה."
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "באופן מיידי"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 שניות"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 שניות"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 שניות"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "דקה אחת"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 דקות"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 דקות"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15 דקות"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 דקות"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "שעה אחת"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4 שעות"
   },
   "onIdle": {
-    "message": "On system idle"
+    "message": "כשהמערכת מזהה חוסר פעילות"
   },
   "onSleep": {
-    "message": "On system sleep"
+    "message": "כשהמערכת נכנסת למצב שינה"
   },
   "onLocked": {
-    "message": "On system lock"
+    "message": "בזמן נעילת המערכת"
   },
   "onRestart": {
-    "message": "On restart"
+    "message": "בהפעלה מחדש"
   },
   "never": {
-    "message": "Never"
+    "message": "לעולם לא"
   },
   "security": {
-    "message": "Security"
+    "message": "אבטחה"
   },
   "clearClipboard": {
-    "message": "Clear clipboard",
+    "message": "נקה לוח העתקות",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "נקה אוטומטית ערכים שהועתקו ללוח ההעתקות (clipboard).",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "disableFavicon": {
-    "message": "Disable website icons"
+    "message": "בטל אייקונים של האתר"
   },
   "disableFaviconDesc": {
-    "message": "Website icons provide a recognisable image next to each login item in your vault."
+    "message": "יכולת הצג אייקונים-של-האתר מאפשרת הצגה של תמונה או אייקון מוכר ליד פרטי הכניסה שבכספת שלך."
   },
   "enableMinToTray": {
-    "message": "Minimise to tray icon"
+    "message": "מזער למגש המערכת"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimising the window, show an icon in the system tray instead."
+    "message": "בלחיצה על מזעור החלון, יופיע אייקון במגש המערכת (לרוב, ליד השעון)."
   },
   "enableCloseToTray": {
-    "message": "Close to tray icon"
+    "message": "סגור למגש המערכת"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "בלחיצה על סגירת החלון, יופיע אייקון במגש המערכת (לרוב, ליד השעון)."
   },
   "enableTray": {
-    "message": "Enable tray icon"
+    "message": "אפשר אייקון במגש המערכת"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "הצג תמיד אייקון במגש המערכת."
   },
   "startToTray": {
-    "message": "Start to tray icon"
+    "message": "התחל עם אייקון במגש המערכת"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "בהפעלה הראשונה של האפליקציה, הצג אייקון במגש המערכת (מבלי לפתוח את החלון הראשי)."
   },
   "language": {
-    "message": "Language"
+    "message": "שפה"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "שנה את שפת האפליקציה. יש להפעיל מחדש את האפליקציה להחלת השינויים."
   },
   "theme": {
-    "message": "Theme"
+    "message": "ערכת נושא"
   },
   "themeDesc": {
-    "message": "Change the application's colour theme."
+    "message": "שנה את ערכת הצבע של האפליקציה."
   },
   "dark": {
-    "message": "Dark",
+    "message": "כהה",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "בהיר",
     "description": "Light color"
   },
   "copy": {
-    "message": "Copy",
+    "message": "העתק",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check for updates"
+    "message": "חפש עדכונים"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "גירסה $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -901,7 +901,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart to update"
+    "message": "הפעל מחדש להתקנת העדכון"
   },
   "restartToUpdateDesc": {
     "message": "Version $VERSION_NUM$ is ready to install. You must restart the application to complete the installation. Do you want to restart and update now?",
@@ -913,7 +913,7 @@
     }
   },
   "updateAvailable": {
-    "message": "Update available"
+    "message": "Update Available"
   },
   "updateAvailableDesc": {
     "message": "An update was found. Do you want to download it now?"
@@ -928,33 +928,33 @@
     "message": "No updates are currently available. You are using the latest version."
   },
   "updateError": {
-    "message": "Update error"
+    "message": "Update Error"
   },
   "unknown": {
     "message": "Unknown"
   },
   "copyUsername": {
-    "message": "Copy username"
+    "message": "Copy Username"
   },
   "copyNumber": {
-    "message": "Copy number",
+    "message": "Copy Number",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy security code",
+    "message": "Copy Security Code",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium membership"
+    "message": "Premium Membership"
   },
   "premiumManage": {
-    "message": "Manage membership"
+    "message": "Manage Membership"
   },
   "premiumManageAlert": {
     "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumRefresh": {
-    "message": "Refresh membership"
+    "message": "Refresh Membership"
   },
   "premiumNotCurrentMember": {
     "message": "You are not currently a premium member."
@@ -1005,7 +1005,7 @@
     "message": "Refresh complete"
   },
   "passwordHistory": {
-    "message": "Password history"
+    "message": "Password History"
   },
   "clear": {
     "message": "Clear",
@@ -1029,35 +1029,35 @@
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select all"
+    "message": "Select All"
   },
   "zoomIn": {
-    "message": "Zoom in"
+    "message": "Zoom In"
   },
   "zoomOut": {
-    "message": "Zoom out"
+    "message": "Zoom Out"
   },
   "resetZoom": {
-    "message": "Reset zoom"
+    "message": "Reset Zoom"
   },
   "toggleFullScreen": {
-    "message": "Toggle full screen"
+    "message": "Toggle Full Screen"
   },
   "reload": {
     "message": "Reload"
   },
   "toggleDevTools": {
-    "message": "Toggle developer tools"
+    "message": "Toggle Developer Tools"
   },
   "minimize": {
-    "message": "Minimise",
+    "message": "Minimize",
     "description": "Minimize window"
   },
   "zoom": {
     "message": "Zoom"
   },
   "bringAllToFront": {
-    "message": "Bring all to front",
+    "message": "Bring All to Front",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
@@ -1070,10 +1070,10 @@
     "message": "Hide Bitwarden"
   },
   "hideOthers": {
-    "message": "Hide others"
+    "message": "Hide Others"
   },
   "showAll": {
-    "message": "Show all"
+    "message": "Show All"
   },
   "quitBitwarden": {
     "message": "Quit Bitwarden"
@@ -1127,7 +1127,7 @@
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match detection",
+    "message": "Match Detection",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
@@ -1135,10 +1135,10 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle options"
+    "message": "Toggle Options"
   },
   "organization": {
-    "message": "Organisation",
+    "message": "Organization",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
@@ -1148,14 +1148,14 @@
     "message": "Exit"
   },
   "showHide": {
-    "message": "Show \/ hide",
+    "message": "Show \/ Hide",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to tray"
+    "message": "Hide to Tray"
   },
   "alwaysOnTop": {
-    "message": "Always on top",
+    "message": "Always on Top",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1163,27 +1163,27 @@
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password updated",
+    "message": "Password Updated",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export vault"
+    "message": "Export Vault"
   },
   "fileFormat": {
-    "message": "File format"
+    "message": "File Format"
   },
   "warning": {
     "message": "WARNING",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over insecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "exportMasterPassword": {
     "message": "Enter your master password to export your vault data."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organisations. Organisations allow you to share items securely with other users."
+    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
   },
   "noCollectionsInList": {
     "message": "There are no collections to list."
@@ -1207,7 +1207,7 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak master password"
+    "message": "Weak Master Password"
   },
   "weakMasterPasswordDesc": {
     "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
@@ -1238,13 +1238,13 @@
     "message": "Preferences"
   },
   "enableMenuBar": {
-    "message": "Enable menu bar icon"
+    "message": "Enable Menu Bar Icon"
   },
   "enableMenuBarDesc": {
     "message": "Always show an icon in the menu bar."
   },
   "hideToMenuBar": {
-    "message": "Hide to menu bar"
+    "message": "Hide to Menu Bar"
   },
   "selectOneCollection": {
     "message": "You must select at least one collection."

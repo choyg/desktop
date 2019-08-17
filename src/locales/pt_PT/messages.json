@@ -2,6 +2,9 @@
   "bitwarden": {
     "message": "Bitwarden"
   },
+  "filters": {
+    "message": "Filtros"
+  },
   "allItems": {
     "message": "Todos os itens"
   },
@@ -297,6 +300,9 @@
   "value": {
     "message": "Valor"
   },
+  "dragToSort": {
+    "message": "Arraste para ordenar"
+  },
   "cfTypeText": {
     "message": "Texto"
   },
@@ -363,6 +369,13 @@
   },
   "wordSeparator": {
     "message": "Separador de palavras"
+  },
+  "capitalize": {
+    "message": "Capitalizar",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Incluir número"
   },
   "close": {
     "message": "Fechar"
@@ -598,7 +611,7 @@
     "message": "Ambiente auto-hospedado"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Especifique o URL de base da sua instalação local do Bitwarden."
+    "message": "Especifique o URL de base da sua instalação do Bitwarden alojada nas suas premissas."
   },
   "customEnvironment": {
     "message": "Ambiente personalizado"
@@ -734,12 +747,16 @@
   "unlock": {
     "message": "Desbloquear"
   },
-  "loggedInAs": {
-    "message": "Sessão iniciada como $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Sessão iniciada como $EMAIL$ em $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -991,7 +1008,8 @@
     "message": "Histórico de palavras-passe"
   },
   "clear": {
-    "message": "Limpar"
+    "message": "Limpar",
+    "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "Não existem palavras-passe para listar."
@@ -1136,6 +1154,10 @@
   "hideToTray": {
     "message": "Ocultar para a bandeja"
   },
+  "alwaysOnTop": {
+    "message": "Sempre no topo",
+    "description": "Application window should always stay on top of other windows"
+  },
   "dateUpdated": {
     "message": "Atualizado",
     "description": "ex. Date this item was updated"
@@ -1211,5 +1233,20 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear com palavra-passe mestra ao reiniciar"
+  },
+  "preferences": {
+    "message": "Preferências"
+  },
+  "enableMenuBar": {
+    "message": "Ativar ícone da barra de menu"
+  },
+  "enableMenuBarDesc": {
+    "message": "Mostrar sempre um ícone na barra de menu."
+  },
+  "hideToMenuBar": {
+    "message": "Ocultar para a barra de menu"
+  },
+  "selectOneCollection": {
+    "message": "Tem de selecionar pelo menos uma coleção."
   }
 }

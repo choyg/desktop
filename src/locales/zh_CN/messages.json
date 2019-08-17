@@ -2,6 +2,9 @@
   "bitwarden": {
     "message": "Bitwarden"
   },
+  "filters": {
+    "message": "筛选"
+  },
   "allItems": {
     "message": "所有项目"
   },
@@ -297,6 +300,9 @@
   "value": {
     "message": "值"
   },
+  "dragToSort": {
+    "message": "拖动排序"
+  },
   "cfTypeText": {
     "message": "文本"
   },
@@ -363,6 +369,13 @@
   },
   "wordSeparator": {
     "message": "单词分隔符"
+  },
+  "capitalize": {
+    "message": "大写",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "包含数字"
   },
   "close": {
     "message": "关闭"
@@ -598,7 +611,7 @@
     "message": "自我托管环境"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "指定自己配置、托管的 Bitwarden 环境的基础 URL。"
+    "message": "指定自己配置、托管的 bitwarden 环境的基础 URL。"
   },
   "customEnvironment": {
     "message": "自定义环境"
@@ -734,12 +747,16 @@
   "unlock": {
     "message": "解锁​​​​"
   },
-  "loggedInAs": {
-    "message": "已登录为 $EMAIL$。",
+  "loggedInAsOn": {
+    "message": "以 $EMAIL$ 在 $HOSTNAME$ 上登录。",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -991,7 +1008,8 @@
     "message": "密码历史记录"
   },
   "clear": {
-    "message": "清除"
+    "message": "清除",
+    "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "没有要显示的项目。"
@@ -1136,6 +1154,10 @@
   "hideToTray": {
     "message": "隐藏到托盘"
   },
+  "alwaysOnTop": {
+    "message": "总是在最前面(&A)",
+    "description": "Application window should always stay on top of other windows"
+  },
   "dateUpdated": {
     "message": "更新于",
     "description": "ex. Date this item was updated"
@@ -1211,5 +1233,20 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "重启后改用主密码锁定"
+  },
+  "preferences": {
+    "message": "设置"
+  },
+  "enableMenuBar": {
+    "message": "启用菜单栏图标"
+  },
+  "enableMenuBarDesc": {
+    "message": "始终在系统托盘中显示一个图标。"
+  },
+  "hideToMenuBar": {
+    "message": "隐藏到菜单栏"
+  },
+  "selectOneCollection": {
+    "message": "您必须选择至少一个收藏。"
   }
 }

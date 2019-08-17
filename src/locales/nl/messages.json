@@ -2,6 +2,9 @@
   "bitwarden": {
     "message": "Bitwarden"
   },
+  "filters": {
+    "message": "Filters"
+  },
   "allItems": {
     "message": "Alle Items"
   },
@@ -9,7 +12,7 @@
     "message": "Favorieten"
   },
   "types": {
-    "message": "Types"
+    "message": "Typen"
   },
   "typeLogin": {
     "message": "Login"
@@ -123,7 +126,7 @@
     "message": "Nummer"
   },
   "brand": {
-    "message": "Merk"
+    "message": "Soort"
   },
   "expiration": {
     "message": "Vervaldatum"
@@ -297,6 +300,9 @@
   "value": {
     "message": "Waarde"
   },
+  "dragToSort": {
+    "message": "Sleep om te sorteren"
+  },
   "cfTypeText": {
     "message": "Tekst"
   },
@@ -363,6 +369,13 @@
   },
   "wordSeparator": {
     "message": "Woordscheidingsteken"
+  },
+  "capitalize": {
+    "message": "Beginhoofdletters",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Nummer opnemen"
   },
   "close": {
     "message": "Sluiten"
@@ -529,7 +542,7 @@
     }
   },
   "rememberMe": {
-    "message": "Mijn gegevens onthouden"
+    "message": "Remember me"
   },
   "sendVerificationCodeEmailAgain": {
     "message": "Verificatiecode-e-mail opnieuw versturen"
@@ -700,13 +713,13 @@
     "message": "Kluis synchroniseren"
   },
   "changeMasterPass": {
-    "message": "Hoofdwachtwoord wijzigen"
+    "message": "Change Master Password"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "U kunt uw hoofdwachtwoord wijzigen in de kluis op bitwarden.com. Wilt u de website nu bezoeken?"
+    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "fingerprintPhrase": {
-    "message": "Vingerafdrukfrase",
+    "message": "Vingerafdruk zin",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
@@ -734,12 +747,16 @@
   "unlock": {
     "message": "Ontgrendelen"
   },
-  "loggedInAs": {
-    "message": "Ingelogd als $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Ingelogd als $EMAIL$ op $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -753,7 +770,7 @@
     "message": "Tweestapslogin"
   },
   "lockOptions": {
-    "message": "Vergrendelopties"
+    "message": "Vergrendelingsopties"
   },
   "lockOptionsDesc": {
     "message": "Kies wanneer uw kluis wordt vergrendeld. Een vergrendelde kluis vereist dat u uw hoofdwachtwoord opnieuw invoert om de kluis opnieuw te mogen gebruiken."
@@ -864,18 +881,18 @@
     "description": "Dark color"
   },
   "light": {
-    "message": "Licht",
+    "message": "Light",
     "description": "Light color"
   },
   "copy": {
-    "message": "Kopiëren",
+    "message": "Copy",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Controleren op updates"
+    "message": "Check For Updates"
   },
   "version": {
-    "message": "Versie $VERSION_NUM$",
+    "message": "Version $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -884,10 +901,10 @@
     }
   },
   "restartToUpdate": {
-    "message": "Herstart om bij te werken"
+    "message": "Restart To Update"
   },
   "restartToUpdateDesc": {
-    "message": "Versie $VERSION_NUM$ kan worden geïnstalleerd. U dient Bitwarden te herstarten om de installatie te voltooien. Wilt u nu herstarten en bijwerken?",
+    "message": "Version $VERSION_NUM$ is ready to install. You must restart the application to complete the installation. Do you want to restart and update now?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -896,10 +913,10 @@
     }
   },
   "updateAvailable": {
-    "message": "Update beschikbaar"
+    "message": "Update Available"
   },
   "updateAvailableDesc": {
-    "message": "Er is een update beschikbaar. Wilt u de update nu downloaden?"
+    "message": "An update was found. Do you want to download it now?"
   },
   "restart": {
     "message": "Herstarten"
@@ -991,7 +1008,8 @@
     "message": "Wachtwoordgeschiedenis"
   },
   "clear": {
-    "message": "Wissen"
+    "message": "Wissen",
+    "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "Er zijn geen wachtwoorden om weer te geven."
@@ -1136,6 +1154,10 @@
   "hideToTray": {
     "message": "Naar het systeemvak verbergen"
   },
+  "alwaysOnTop": {
+    "message": "Altijd op voorgrond",
+    "description": "Application window should always stay on top of other windows"
+  },
   "dateUpdated": {
     "message": "Bijgewerkt",
     "description": "ex. Date this item was updated"
@@ -1211,5 +1233,20 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Vergrendelen met hoofdwachtwoord bij herstart"
+  },
+  "preferences": {
+    "message": "Voorkeuren"
+  },
+  "enableMenuBar": {
+    "message": "Icoon in de menubalk"
+  },
+  "enableMenuBarDesc": {
+    "message": "Altijd een pictogram in de menubalk weergeven."
+  },
+  "hideToMenuBar": {
+    "message": "Verbergen naar de menubalk"
+  },
+  "selectOneCollection": {
+    "message": "U moet tenminste één collectie selecteren."
   }
 }

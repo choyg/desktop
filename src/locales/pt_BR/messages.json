@@ -2,6 +2,9 @@
   "bitwarden": {
     "message": "Bitwarden"
   },
+  "filters": {
+    "message": "Filtros"
+  },
   "allItems": {
     "message": "Todos os Itens"
   },
@@ -297,6 +300,9 @@
   "value": {
     "message": "Valor"
   },
+  "dragToSort": {
+    "message": "Arrastar para ordenar"
+  },
   "cfTypeText": {
     "message": "Texto"
   },
@@ -363,6 +369,13 @@
   },
   "wordSeparator": {
     "message": "Separador de Palavra"
+  },
+  "capitalize": {
+    "message": "Letras Iniciais em Maiúsculas",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Incluir Número"
   },
   "close": {
     "message": "Fechar"
@@ -734,12 +747,16 @@
   "unlock": {
     "message": "Desbloquear"
   },
-  "loggedInAs": {
-    "message": "Sessão iniciada como $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Entrou como $EMAIL$ em $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -991,7 +1008,8 @@
     "message": "Histórico de Senha"
   },
   "clear": {
-    "message": "Limpar"
+    "message": "Limpar",
+    "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "Não existem senhas para listar."
@@ -1136,6 +1154,10 @@
   "hideToTray": {
     "message": "Ocultar para a Bandeja"
   },
+  "alwaysOnTop": {
+    "message": "Sempre no Topo",
+    "description": "Application window should always stay on top of other windows"
+  },
   "dateUpdated": {
     "message": "Atualizado",
     "description": "ex. Date this item was updated"
@@ -1211,5 +1233,20 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear com senha mestra ao reiniciar"
+  },
+  "preferences": {
+    "message": "Preferências"
+  },
+  "enableMenuBar": {
+    "message": "Ativar Ícone da Barra de Menu"
+  },
+  "enableMenuBarDesc": {
+    "message": "Sempre mostrar um ícone na barra de menu."
+  },
+  "hideToMenuBar": {
+    "message": "Ocultar para a Barra de Menu"
+  },
+  "selectOneCollection": {
+    "message": "Você deve selecionar pelo menos uma coleção."
   }
 }

@@ -2,6 +2,9 @@
   "bitwarden": {
     "message": "Bitwarden"
   },
+  "filters": {
+    "message": "Filtres"
+  },
   "allItems": {
     "message": "Tots els elements"
   },
@@ -297,6 +300,9 @@
   "value": {
     "message": "Valor"
   },
+  "dragToSort": {
+    "message": "Arrossega per ordenar"
+  },
   "cfTypeText": {
     "message": "Text"
   },
@@ -363,6 +369,13 @@
   },
   "wordSeparator": {
     "message": "Separador de paraules"
+  },
+  "capitalize": {
+    "message": "Majúscules inicials",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Inclou número"
   },
   "close": {
     "message": "Tanca"
@@ -598,7 +611,7 @@
     "message": "Entorn d'allotjament propi"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Especifiqueu l'URL base de la vostra instal·lació de Bitwarden allotjada en un entorn propi."
+    "message": "Especifiqueu l'URL base de la vostra instal·lació Bitwarden allotjada en un entorn propi."
   },
   "customEnvironment": {
     "message": "Entorn personalitzat"
@@ -734,12 +747,16 @@
   "unlock": {
     "message": "Desbloqueja"
   },
-  "loggedInAs": {
-    "message": "S'ha iniciat la sessió com a $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Heu iniciat sessió com a $EMAIL$ en $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -991,7 +1008,8 @@
     "message": "Historial de les contrasenyes"
   },
   "clear": {
-    "message": "Esborra"
+    "message": "Esborra",
+    "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "No hi ha cap contrasenya a llistar."
@@ -1136,6 +1154,10 @@
   "hideToTray": {
     "message": "Amaga a la safata"
   },
+  "alwaysOnTop": {
+    "message": "Sempre visible",
+    "description": "Application window should always stay on top of other windows"
+  },
   "dateUpdated": {
     "message": "Actualitzat",
     "description": "ex. Date this item was updated"
@@ -1211,5 +1233,20 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloqueja amb la contrasenya mestra en reiniciar"
+  },
+  "preferences": {
+    "message": "Preferències"
+  },
+  "enableMenuBar": {
+    "message": "Habilita la icona de la barra de menús"
+  },
+  "enableMenuBarDesc": {
+    "message": "Mostra sempre una icona a la barra de menú."
+  },
+  "hideToMenuBar": {
+    "message": "Amaga la barra de menú"
+  },
+  "selectOneCollection": {
+    "message": "Heu d'escollir com a mínim una col·lecció."
   }
 }

@@ -2,27 +2,36 @@
     <div class="search">
         <input type="search" placeholder="{{searchPlaceholder || ('searchVault' | i18n)}}" id="search"
             [(ngModel)]="searchText" (input)="search(200)" appAutofocus>
-        <i class="fa fa-search"></i>
+        <i class="fa fa-search" aria-hidden="true"></i>
     </div>
 </div>
 <div class="content">
-    <ng-container *ngIf="ciphers">
-        <div class="list" *ngIf="ciphers.length > 0">
-            <a *ngFor="let c of ciphers" appStopClick (click)="selectCipher(c)" (contextmenu)="rightClickCipher(c)"
-                href="#" title="{{'viewItem' | i18n}}" [ngClass]="{'active': c.id === activeCipherId}">
+    <ng-container *ngIf="(isPaging() ? pagedCiphers : ciphers) as filteredCiphers">
+        <div class="list" *ngIf="filteredCiphers.length" infiniteScroll [infiniteScrollDistance]="1"
+            [infiniteScrollContainer]="'#items .content'" [fromRoot]="true" [infiniteScrollDisabled]="!isPaging()"
+            (scrolled)="loadMore()">
+            <a *ngFor="let c of filteredCiphers" appStopClick (click)="selectCipher(c)"
+                (contextmenu)="rightClickCipher(c)" href="#" title="{{'viewItem' | i18n}}"
+                [ngClass]="{'active': c.id === activeCipherId}">
                 <app-vault-icon [cipher]="c"></app-vault-icon>
                 <span class="text">
                     {{c.name}}
-                    <i class="fa fa-share-alt text-muted" *ngIf="c.organizationId" title="{{'shared' | i18n}}"></i>
-                    <i class="fa fa-paperclip text-muted" *ngIf="c.hasAttachments" title="{{'attachments' | i18n}}"></i>
+                    <ng-container *ngIf="c.organizationId">
+                        <i class="fa fa-share-alt text-muted" title="{{'shared' | i18n}}" aria-hidden="true"></i>
+                        <span class="sr-only">{{'shared' | i18n}}</span>
+                    </ng-container>
+                    <ng-container *ngIf="c.hasAttachments">
+                        <i class="fa fa-paperclip text-muted" title="{{'attachments' | i18n}}" aria-hidden="true"></i>
+                        <span class="sr-only">{{'attachments' | i18n}}</span>
+                    </ng-container>
                 </span>
                 <span class="detail">{{c.subTitle}}</span>
             </a>
         </div>
-        <div class="no-items" *ngIf="ciphers.length === 0">
-            <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded"></i>
+        <div class="no-items" *ngIf="!filteredCiphers.length">
+            <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded" aria-hidden="true"></i>
             <ng-container *ngIf="loaded">
-                <i class="fa fa-frown-o fa-4x"></i>
+                <i class="fa fa-frown-o fa-4x" aria-hidden="true"></i>
                 <p>{{'noItemsInList' | i18n}}</p>
                 <button (click)="addCipher()" class="btn block primary link">{{'addItem' | i18n}}</button>
             </ng-container>
@@ -31,7 +40,7 @@
 </div>
 <div class="footer">
     <button appBlurClick (click)="addCipher()" (contextmenu)="addCipherOptions()" class="block primary"
-        title="{{'addItem' | i18n}}">
-        <i class="fa fa-plus fa-lg"></i>
+        appA11yTitle="{{'addItem' | i18n}}">
+        <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
     </button>
 </div>

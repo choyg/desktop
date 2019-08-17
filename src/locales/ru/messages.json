@@ -2,6 +2,9 @@
   "bitwarden": {
     "message": "Bitwarden"
   },
+  "filters": {
+    "message": "Фильтры"
+  },
   "allItems": {
     "message": "Все элементы"
   },
@@ -18,7 +21,7 @@
     "message": "Карта"
   },
   "typeIdentity": {
-    "message": "Личность"
+    "message": "Личные данные"
   },
   "typeSecureNote": {
     "message": "Защищенная заметка"
@@ -286,7 +289,7 @@
     "message": "Правка"
   },
   "authenticatorKeyTotp": {
-    "message": "Ключ аутентификатора (TOTP)"
+    "message": "Ключ проверки подлинности (TOTP)"
   },
   "folder": {
     "message": "Папка"
@@ -296,6 +299,9 @@
   },
   "value": {
     "message": "Значение"
+  },
+  "dragToSort": {
+    "message": "Перетащите для сортировки"
   },
   "cfTypeText": {
     "message": "Текстовое"
@@ -363,6 +369,13 @@
   },
   "wordSeparator": {
     "message": "Разделитель слов"
+  },
+  "capitalize": {
+    "message": "С заглавной буквы",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Включить цифру"
   },
   "close": {
     "message": "Закрыть"
@@ -445,7 +458,7 @@
     "message": "Мастер-пароль"
   },
   "masterPassDesc": {
-    "message": "Мастер-пароль - ключ к вашему безопасному хранилищу. Он очень важен, поэтому не забывайте его. Восстановить мастер-пароль невозможно."
+    "message": "Мастер-пароль - ключ к вашему защищенному хранилищу. Он очень важен, поэтому не забывайте его. Восстановить мастер-пароль невозможно."
   },
   "masterPassHintDesc": {
     "message": "Подсказка к мастер-паролю может помочь вам его вспомнить."
@@ -560,7 +573,7 @@
     "message": "Ключ безопасности YubiKey OTP"
   },
   "yubiKeyDesc": {
-    "message": "Используйте YubiKey для доступа к вашей учетной записи. Работает с устройствами YubiKey 4 серии, 5 серии и NEO."
+    "message": "Используйте YubiKey для доступа к учетной записи. Работает с устройствами YubiKey серий 4, 5 и NEO."
   },
   "duoDesc": {
     "message": "Подтвердите при помощи Duo Security, используя приложение Duo Mobile, SMS, телефонный звонок или ключ безопасности U2F.",
@@ -592,7 +605,7 @@
     "message": "Добавьте дополнительные варианты аутентификации, которые поддерживаются большинством устройств (например, приложение-аутентификатор)."
   },
   "twoStepOptions": {
-    "message": "Параметры двухфакторной аутентификации"
+    "message": "Настройки двухфакторной аутентификации"
   },
   "selfHostedEnvironment": {
     "message": "Среда собственного хостинга"
@@ -729,17 +742,21 @@
     "message": "Ошибка синхронизации"
   },
   "yourVaultIsLocked": {
-    "message": "Хранилище заблокировано. Введите мастер-пароль для продолжения."
+    "message": "Ваше хранилище заблокировано. Для продолжения введите мастер-пароль."
   },
   "unlock": {
     "message": "Разблокировать"
   },
-  "loggedInAs": {
-    "message": "Вы вошли как $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Выполнен вход на $HOSTNAME$ как $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -753,7 +770,7 @@
     "message": "Двухфакторная аутентификация"
   },
   "lockOptions": {
-    "message": "Параметры блокировки"
+    "message": "Настройки блокировки"
   },
   "lockOptionsDesc": {
     "message": "Выберите условие блокировки вашего хранилища. Для его разблокировки потребуется повторно ввести мастер-пароль."
@@ -771,25 +788,25 @@
     "message": "30 секунд"
   },
   "oneMinute": {
-    "message": "Через 1 минуту"
+    "message": "1 минута"
   },
   "twoMinutes": {
     "message": "2 минуты"
   },
   "fiveMinutes": {
-    "message": "Через 5 минут"
+    "message": "5 минут"
   },
   "fifteenMinutes": {
-    "message": "Через 15 минут"
+    "message": "15 минут"
   },
   "thirtyMinutes": {
-    "message": "Через 30 минут"
+    "message": "30 минут"
   },
   "oneHour": {
-    "message": "Через 1 час"
+    "message": "1 час"
   },
   "fourHours": {
-    "message": "Через 4 часа"
+    "message": "4 часа"
   },
   "onIdle": {
     "message": "При бездействии"
@@ -810,7 +827,7 @@
     "message": "Безопасность"
   },
   "clearClipboard": {
-    "message": "Очистить буфер обмена",
+    "message": "Очистка буфера обмена",
     "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
   },
   "clearClipboardDesc": {
@@ -991,7 +1008,8 @@
     "message": "История паролей"
   },
   "clear": {
-    "message": "Очистить"
+    "message": "Очистить",
+    "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "Нет паролей для отображения."
@@ -1061,7 +1079,7 @@
     "message": "Выйти из Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ скопировано",
+    "message": "$VALUE$ скопирован(-о)",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -1080,7 +1098,7 @@
     "message": "Проверьте, не скомпрометирован ли пароль."
   },
   "passwordExposed": {
-    "message": "Этот пароль был скомпрометирован $VALUE$ раз(а). Вы должны изменить его.",
+    "message": "Этот пароль был скомпрометирован $VALUE$ раз(-а). Вы должны изменить его.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1135,6 +1153,10 @@
   },
   "hideToTray": {
     "message": "Свернуть в трей"
+  },
+  "alwaysOnTop": {
+    "message": "Поверх всех окон",
+    "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
     "message": "Обновлено",
@@ -1195,7 +1217,7 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Разблокировать с помощью PIN-кода"
+    "message": "Разблокировка PIN-кодом"
   },
   "setYourPinCode": {
     "message": "Установите PIN-код для разблокировки Bitwarden. Настройки PIN-кода будут сброшены, если вы когда-либо полностью выйдете из приложения."
@@ -1207,9 +1229,24 @@
     "message": "Неверный PIN-код."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Ваше хранилище заблокировано. Подтвердите свой PIN-код, чтобы продолжить."
+    "message": "Ваше хранилище заблокировано. Для продолжения введите PIN-код."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокировать мастер-паролем при перезапуске"
+  },
+  "preferences": {
+    "message": "Настройки"
+  },
+  "enableMenuBar": {
+    "message": "Включить иконку в строке меню"
+  },
+  "enableMenuBarDesc": {
+    "message": "Всегда показывать значок в строке меню."
+  },
+  "hideToMenuBar": {
+    "message": "Скрыть в строке меню"
+  },
+  "selectOneCollection": {
+    "message": "Необходимо выбрать хотя бы одну коллекцию."
   }
 }

@@ -33,6 +33,7 @@ import { AuthService } from 'jslib/abstractions/auth.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CollectionService } from 'jslib/abstractions/collection.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
+import { EventService } from 'jslib/abstractions/event.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { LockService } from 'jslib/abstractions/lock.service';
@@ -42,6 +43,7 @@ import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SearchService } from 'jslib/abstractions/search.service';
 import { SettingsService } from 'jslib/abstractions/settings.service';
+import { StateService } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 import { SystemService } from 'jslib/abstractions/system.service';
@@ -57,7 +59,7 @@ const IdleTimeout = 60000 * 10; // 10 minutes
     selector: 'app-root',
     styles: [],
     template: `
-        <toaster-container [toasterconfig]="toasterConfig"></toaster-container>
+        <toaster-container [toasterconfig]="toasterConfig" aria-live="polite"></toaster-container>
         <ng-template #settings></ng-template>
         <ng-template #premium></ng-template>
         <ng-template #passwordHistory></ng-template>
@@ -92,7 +94,8 @@ export class AppComponent implements OnInit {
         private cryptoService: CryptoService, private componentFactoryResolver: ComponentFactoryResolver,
         private messagingService: MessagingService, private collectionService: CollectionService,
         private searchService: SearchService, private notificationsService: NotificationsService,
-        private platformUtilsService: PlatformUtilsService, private systemService: SystemService) { }
+        private platformUtilsService: PlatformUtilsService, private systemService: SystemService,
+        private stateService: StateService, private eventService: EventService) { }
 
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
@@ -118,10 +121,16 @@ export class AppComponent implements OnInit {
                         this.systemService.cancelProcessReload();
                         break;
                     case 'loggedOut':
+                        if (this.modal != null) {
+                            this.modal.close();
+                        }
                         this.notificationsService.updateConnection();
                         this.updateAppMenu();
                         this.systemService.startProcessReload();
                         await this.systemService.clearPendingClipboard();
+                        break;
+                    case 'authBlocked':
+                        this.router.navigate(['login']);
                         break;
                     case 'logout':
                         this.logOut(!!message.expired);
@@ -130,6 +139,10 @@ export class AppComponent implements OnInit {
                         await this.lockService.lock(true);
                         break;
                     case 'locked':
+                        if (this.modal != null) {
+                            this.modal.close();
+                        }
+                        this.stateService.purge();
                         this.router.navigate(['lock']);
                         this.notificationsService.updateConnection();
                         this.updateAppMenu();
@@ -175,7 +188,9 @@ export class AppComponent implements OnInit {
                         });
                         break;
                     case 'copiedToClipboard':
-                        this.systemService.clearClipboard(message.clipboardValue, message.clearMs);
+                        if (!message.clearing) {
+                            this.systemService.clearClipboard(message.clipboardValue, message.clearMs);
+                        }
                         break;
                     default:
                 }
@@ -195,9 +210,11 @@ export class AppComponent implements OnInit {
     }
 
     private async logOut(expired: boolean) {
+        await this.eventService.uploadEvents();
         const userId = await this.userService.getUserId();
 
         await Promise.all([
+            this.eventService.clearEvents(),
             this.syncService.setLastSync(new Date(0)),
             this.tokenService.clearToken(),
             this.cryptoService.clearKeys(),
@@ -208,6 +225,7 @@ export class AppComponent implements OnInit {
             this.collectionService.clear(userId),
             this.passwordGenerationService.clear(),
             this.lockService.clear(),
+            this.stateService.purge(),
         ]);
 
         this.lockService.pinLocked = false;

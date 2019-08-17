@@ -2,6 +2,9 @@
   "bitwarden": {
     "message": "Bitwarden"
   },
+  "filters": {
+    "message": "Filtri"
+  },
   "allItems": {
     "message": "Tutti gli Elementi"
   },
@@ -297,6 +300,9 @@
   "value": {
     "message": "Valore"
   },
+  "dragToSort": {
+    "message": "Trascina per ordinare"
+  },
   "cfTypeText": {
     "message": "Testo"
   },
@@ -363,6 +369,13 @@
   },
   "wordSeparator": {
     "message": "Separatore parole"
+  },
+  "capitalize": {
+    "message": "Rendi maiuscolo",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Includi numero"
   },
   "close": {
     "message": "Chiudi"
@@ -734,12 +747,16 @@
   "unlock": {
     "message": "Sblocca"
   },
-  "loggedInAs": {
-    "message": "Registrato come $EMAIL$.",
+  "loggedInAsOn": {
+    "message": "Accesso effettuato come $EMAIL$ su $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -991,7 +1008,8 @@
     "message": "Cronologia delle Password"
   },
   "clear": {
-    "message": "Elimina tutto"
+    "message": "Elimina tutto",
+    "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "Non ci sono password da mostrare."
@@ -1136,6 +1154,10 @@
   "hideToTray": {
     "message": "Nascondi nell'area di notifica"
   },
+  "alwaysOnTop": {
+    "message": "Tieni in primo piano",
+    "description": "Application window should always stay on top of other windows"
+  },
   "dateUpdated": {
     "message": "Aggiornato",
     "description": "ex. Date this item was updated"
@@ -1211,5 +1233,20 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "Blocca con la password principale al riavvio"
+  },
+  "preferences": {
+    "message": "Preferenze"
+  },
+  "enableMenuBar": {
+    "message": "Abilita icona barra dei menu"
+  },
+  "enableMenuBarDesc": {
+    "message": "Mostra sempre un'icona nella barra dei menu."
+  },
+  "hideToMenuBar": {
+    "message": "Nascondi nella barra dei menu"
+  },
+  "selectOneCollection": {
+    "message": "Devi selezionare almeno una categoria."
   }
 }

@@ -23,9 +23,9 @@
                                 [appAutofocus]="email !== ''" (input)="updatePasswordStrength()">
                         </div>
                         <div class="action-buttons">
-                            <a class="row-btn" href="#" appStopClick appBlurClick title="{{'toggleVisibility' | i18n}}"
-                                (click)="togglePassword(false)">
-                                <i class="fa fa-lg"
+                            <a class="row-btn" href="#" appStopClick appBlurClick role="button"
+                                appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePassword(false)">
+                                <i class="fa fa-lg" aria-hidden="true"
                                     [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                             </a>
                         </div>
@@ -50,9 +50,10 @@
                             name="MasterPasswordRetype" class="monospaced" [(ngModel)]="confirmMasterPassword" required>
                     </div>
                     <div class="action-buttons">
-                        <a class="row-btn" href="#" appStopClick appBlurClick title="{{'toggleVisibility' | i18n}}"
-                            (click)="togglePassword(true)">
-                            <i class="fa fa-lg" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+                        <a class="row-btn" href="#" appStopClick appBlurClick role="button"
+                            appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePassword(true)">
+                            <i class="fa fa-lg" aria-hidden="true"
+                                [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                         </a>
                     </div>
                 </div>
@@ -68,7 +69,7 @@
         <div class="buttons">
             <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick>
                 <b [hidden]="form.loading">{{'submit' | i18n}}</b>
-                <i class="fa fa-spinner fa-spin" [hidden]="!form.loading"></i>
+                <i class="fa fa-spinner fa-spin" [hidden]="!form.loading" aria-hidden="true"></i>
             </button>
             <a routerLink="/login" class="btn block">{{'cancel' | i18n}}</a>
         </div>

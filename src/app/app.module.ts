@@ -4,10 +4,12 @@ import 'zone.js/dist/zone';
 import { ToasterModule } from 'angular2-toaster';
 import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ServicesModule } from './services.module';
 
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -28,12 +30,13 @@ import { TwoFactorComponent } from './accounts/two-factor.component';
 import { IconComponent } from 'jslib/angular/components/icon.component';
 import { ModalComponent } from 'jslib/angular/components/modal.component';
 
+import { A11yTitleDirective } from 'jslib/angular/directives/a11y-title.directive';
 import { ApiActionDirective } from 'jslib/angular/directives/api-action.directive';
 import { AutofocusDirective } from 'jslib/angular/directives/autofocus.directive';
 import { BlurClickDirective } from 'jslib/angular/directives/blur-click.directive';
 import { BoxRowDirective } from 'jslib/angular/directives/box-row.directive';
 import { FallbackSrcDirective } from 'jslib/angular/directives/fallback-src.directive';
-import { FlexCopyDirective } from 'jslib/angular/directives/flex-copy.directive';
+import { SelectCopyDirective } from 'jslib/angular/directives/select-copy.directive';
 import { StopClickDirective } from 'jslib/angular/directives/stop-click.directive';
 import { StopPropDirective } from 'jslib/angular/directives/stop-prop.directive';
 import { TrueFalseValueDirective } from 'jslib/angular/directives/true-false-value.directive';
@@ -136,8 +139,11 @@ registerLocaleData(localeZhTw, 'zh-TW');
             },
         }),
         ToasterModule.forRoot(),
+        InfiniteScrollModule,
+        DragDropModule,
     ],
     declarations: [
+        A11yTitleDirective,
         AddEditComponent,
         ApiActionDirective,
         AppComponent,
@@ -151,7 +157,6 @@ registerLocaleData(localeZhTw, 'zh-TW');
         EnvironmentComponent,
         ExportComponent,
         FallbackSrcDirective,
-        FlexCopyDirective,
         FolderAddEditComponent,
         GroupingsComponent,
         HintComponent,
@@ -166,6 +171,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         PremiumComponent,
         RegisterComponent,
         SearchCiphersPipe,
+        SelectCopyDirective,
         SettingsComponent,
         ShareComponent,
         StopClickDirective,

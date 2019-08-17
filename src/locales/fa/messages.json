@@ -2,6 +2,9 @@
   "bitwarden": {
     "message": "Bitwarden"
   },
+  "filters": {
+    "message": "فیلترها"
+  },
   "allItems": {
     "message": "تمام موارد"
   },
@@ -297,6 +300,9 @@
   "value": {
     "message": "مقدار"
   },
+  "dragToSort": {
+    "message": "کشیدن آیتم برای مرتب کردن"
+  },
   "cfTypeText": {
     "message": "متن"
   },
@@ -364,6 +370,13 @@
   "wordSeparator": {
     "message": "کلمه جداکننده"
   },
+  "capitalize": {
+    "message": "بزرگ نوشتن حرف اول",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "شامل عدد"
+  },
   "close": {
     "message": "بستن"
   },
@@ -375,7 +388,7 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "از کاراکتر های تکراری همسان استفاده نکن"
+    "message": "از کاراکترهای مبهم اجتناب شود"
   },
   "searchCollection": {
     "message": "جستجوی مجموعه"
@@ -442,7 +455,7 @@
     "message": "ثبت"
   },
   "masterPass": {
-    "message": "گذرواژه‌ ی اصلی"
+    "message": "گذرواژه‌ اصلی"
   },
   "masterPassDesc": {
     "message": "گذرواژه اصلی رمز عبوری است که شما برای دسترسی به گاوصندوق خود استفاده میکنید. بیاد داشتن گذرواژه اصلی بسیار اهمیت دارد. اگر فراموشش کنید هیچ راهی برای بازگردانی آن وجود ندارد."
@@ -734,12 +747,16 @@
   "unlock": {
     "message": "باز کردن قفل"
   },
-  "loggedInAs": {
-    "message": "با عنوان $EMAIL$ وارد شده.",
+  "loggedInAsOn": {
+    "message": "وارد شده با $EMAIL$ در $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
       }
     }
   },
@@ -991,7 +1008,8 @@
     "message": "تاریخچه رمز عبور"
   },
   "clear": {
-    "message": "پاک کردن"
+    "message": "پاک کردن",
+    "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
     "message": "هیچ رمز عبوری در لیست وجود ندارد."
@@ -1136,6 +1154,10 @@
   "hideToTray": {
     "message": "مخفی کردن در Tray"
   },
+  "alwaysOnTop": {
+    "message": "همشه در بالا",
+    "description": "Application window should always stay on top of other windows"
+  },
   "dateUpdated": {
     "message": "بروزرسانی شد",
     "description": "ex. Date this item was updated"
@@ -1211,5 +1233,20 @@
   },
   "lockWithMasterPassOnRestart": {
     "message": "در زمان شروع مجدد، با رمز اصلی قفل کن"
+  },
+  "preferences": {
+    "message": "تنظیمات"
+  },
+  "enableMenuBar": {
+    "message": "فعال کردن آیکون نوار منو"
+  },
+  "enableMenuBarDesc": {
+    "message": "همیشه یک آیکون در نوار منو نشان بده."
+  },
+  "hideToMenuBar": {
+    "message": "پنهان کردن در نوار منو"
+  },
+  "selectOneCollection": {
+    "message": "شما باید حداقل یک مجموعه را انتخاب کنید."
   }
 }

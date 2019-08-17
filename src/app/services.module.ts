@@ -12,7 +12,10 @@ import { ElectronLogService } from 'jslib/electron/services/electronLog.service'
 import { ElectronPlatformUtilsService } from 'jslib/electron/services/electronPlatformUtils.service';
 import { ElectronRendererMessagingService } from 'jslib/electron/services/electronRendererMessaging.service';
 import { ElectronRendererSecureStorageService } from 'jslib/electron/services/electronRendererSecureStorage.service';
+import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
 import { isDev } from 'jslib/electron/utils';
+
+import { DeviceType } from 'jslib/enums/deviceType';
 
 import { I18nService } from '../services/i18n.service';
 
@@ -32,10 +35,10 @@ import { ConstantsService } from 'jslib/services/constants.service';
 import { ContainerService } from 'jslib/services/container.service';
 import { CryptoService } from 'jslib/services/crypto.service';
 import { EnvironmentService } from 'jslib/services/environment.service';
+import { EventService } from 'jslib/services/event.service';
 import { ExportService } from 'jslib/services/export.service';
 import { FolderService } from 'jslib/services/folder.service';
 import { LockService } from 'jslib/services/lock.service';
-import { LowdbStorageService } from 'jslib/services/lowdbStorage.service';
 import { NotificationsService } from 'jslib/services/notifications.service';
 import { PasswordGenerationService } from 'jslib/services/passwordGeneration.service';
 import { SearchService } from 'jslib/services/search.service';
@@ -57,6 +60,7 @@ import { CollectionService as CollectionServiceAbstraction } from 'jslib/abstrac
 import { CryptoService as CryptoServiceAbstraction } from 'jslib/abstractions/crypto.service';
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from 'jslib/abstractions/cryptoFunction.service';
 import { EnvironmentService as EnvironmentServiceAbstraction } from 'jslib/abstractions/environment.service';
+import { EventService as EventServiceAbstraction } from 'jslib/abstractions/event.service';
 import { ExportService as ExportServiceAbstraction } from 'jslib/abstractions/export.service';
 import { FolderService as FolderServiceAbstraction } from 'jslib/abstractions/folder.service';
 import { I18nService as I18nServiceAbstraction } from 'jslib/abstractions/i18n.service';
@@ -84,7 +88,7 @@ const stateService = new StateService();
 const broadcasterService = new BroadcasterService();
 const messagingService = new ElectronRendererMessagingService(broadcasterService);
 const platformUtilsService = new ElectronPlatformUtilsService(i18nService, messagingService, true);
-const storageService: StorageServiceAbstraction = new LowdbStorageService(null, remote.app.getPath('userData'));
+const storageService: StorageServiceAbstraction = new ElectronStorageService(remote.app.getPath('userData'));
 const secureStorageService: StorageServiceAbstraction = new ElectronRendererSecureStorageService();
 const cryptoFunctionService: CryptoFunctionServiceAbstraction = new WebCryptoFunctionService(window,
     platformUtilsService);
@@ -103,7 +107,7 @@ const folderService = new FolderService(cryptoService, userService, apiService, 
 const collectionService = new CollectionService(cryptoService, userService, storageService, i18nService);
 searchService = new SearchService(cipherService, platformUtilsService);
 const lockService = new LockService(cipherService, folderService, collectionService,
-    cryptoService, platformUtilsService, storageService, messagingService, searchService, null);
+    cryptoService, platformUtilsService, storageService, messagingService, searchService, userService, null);
 const syncService = new SyncService(userService, apiService, settingsService,
     folderService, cipherService, cryptoService, collectionService, storageService, messagingService,
     async (expired: boolean) => messagingService.send('logout', { expired: expired }));
@@ -117,6 +121,7 @@ const auditService = new AuditService(cryptoFunctionService, apiService);
 const notificationsService = new NotificationsService(userService, syncService, appIdService,
     apiService, lockService, async () => messagingService.send('logout', { expired: true }));
 const environmentService = new EnvironmentService(apiService, storageService, notificationsService);
+const eventService = new EventService(storageService, apiService, userService, cipherService);
 const systemService = new SystemService(storageService, lockService, messagingService, platformUtilsService, null);
 
 const analytics = new Analytics(window, () => isDev(), platformUtilsService, storageService, appIdService);
@@ -129,6 +134,7 @@ export function initFactory(): Function {
         lockService.init(true);
         const locale = await storageService.get<string>(ConstantsService.localeKey);
         await i18nService.init(locale);
+        eventService.init(true);
         authService.init();
         setTimeout(() => notificationsService.init(environmentService), 3000);
         const htmlEl = window.document.documentElement;
@@ -136,7 +142,8 @@ export function initFactory(): Function {
         htmlEl.classList.add('locale_' + i18nService.translationLocale);
         let theme = await storageService.get<string>(ConstantsService.themeKey);
         if (theme == null) {
-            theme = 'light';
+            theme = platformUtilsService.getDevice() === DeviceType.MacOsDesktop &&
+                remote.systemPreferences.isDarkMode() ? 'dark' : 'light';
         }
         htmlEl.classList.add('theme_' + theme);
         stateService.save(ConstantsService.disableFaviconKey,
@@ -195,6 +202,7 @@ export function initFactory(): Function {
         { provide: SearchServiceAbstraction, useValue: searchService },
         { provide: NotificationsServiceAbstraction, useValue: notificationsService },
         { provide: SystemServiceAbstraction, useValue: systemService },
+        { provide: EventServiceAbstraction, useValue: eventService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,
