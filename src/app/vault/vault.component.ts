@@ -101,16 +101,16 @@ export class VaultComponent implements OnInit, OnDestroy {
                         this.copyValue(cipher.login.password, 'password');
                         break;
                     case 'newLogin':
-                        this.addCipher(CipherType.Login);
+                        await this.addCipher(CipherType.Login);
                         break;
                     case 'newCard':
-                        this.addCipher(CipherType.Card);
+                        await this.addCipher(CipherType.Card);
                         break;
                     case 'newIdentity':
-                        this.addCipher(CipherType.Identity);
+                        await this.addCipher(CipherType.Identity);
                         break;
                     case 'newSecureNote':
-                        this.addCipher(CipherType.SecureNote);
+                        await this.addCipher(CipherType.SecureNote);
                         break;
                     case 'newFolder':
                         await this.addFolder();
@@ -127,7 +127,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         break;
                     case 'syncVault':
                         try {
-                            await this.syncService.fullSync(true);
+                            await this.syncService.fullSync(true, true);
                             this.toasterService.popAsync('success', null, this.i18nService.t('syncingComplete'));
                             this.analytics.eventTrack.next({ action: 'Synced Full' });
                         } catch {
@@ -200,12 +200,12 @@ export class VaultComponent implements OnInit, OnDestroy {
                     const cipherView = new CipherView();
                     cipherView.id = params.cipherId;
                     if (params.action === 'edit') {
-                        this.editCipher(cipherView);
+                        await this.editCipher(cipherView);
                     } else {
-                        this.viewCipher(cipherView);
+                        await this.viewCipher(cipherView);
                     }
                 } else if (params.action === 'add') {
-                    this.addCipher();
+                    await this.addCipher();
                 }
 
                 if (params.favorites) {
@@ -233,8 +233,10 @@ export class VaultComponent implements OnInit, OnDestroy {
         });
     }
 
-    viewCipher(cipher: CipherView) {
+    async viewCipher(cipher: CipherView) {
         if (this.action === 'view' && this.cipherId === cipher.id) {
+            return;
+        } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
             return;
         }
 
@@ -311,8 +313,10 @@ export class VaultComponent implements OnInit, OnDestroy {
         menu.popup({ window: remote.getCurrentWindow() });
     }
 
-    editCipher(cipher: CipherView) {
+    async editCipher(cipher: CipherView) {
         if (this.action === 'edit' && this.cipherId === cipher.id) {
+            return;
+        } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
             return;
         }
 
@@ -321,8 +325,10 @@ export class VaultComponent implements OnInit, OnDestroy {
         this.go();
     }
 
-    addCipher(type: CipherType = null) {
+    async addCipher(type: CipherType = null) {
         if (this.action === 'add') {
+            return;
+        } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
             return;
         }
 
@@ -576,6 +582,18 @@ export class VaultComponent implements OnInit, OnDestroy {
         });
     }
 
+    private dirtyInput(): boolean {
+        return (this.action === 'add' || this.action === 'edit') &&
+            document.querySelectorAll('app-vault-add-edit .ng-dirty').length > 0;
+    }
+
+    private async wantsToSaveChanges(): Promise<boolean> {
+        const confirmed = await this.platformUtilsService.showDialog(
+            this.i18nService.t('unsavedChangesConfirmation'), this.i18nService.t('unsavedChangesTitle'),
+            this.i18nService.t('yes'), this.i18nService.t('no'), 'warning');
+        return !confirmed;
+    }
+
     private clearFilters() {
         this.folderId = null;
         this.collectionId = null;
@@ -618,7 +636,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     private functionWithChangeDetection(func: Function) {
-        this.ngZone.run(async () => {
+        this.ngZone.run(() => {
             func();
             this.changeDetectorRef.detectChanges();
         });

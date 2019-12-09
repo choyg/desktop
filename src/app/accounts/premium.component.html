@@ -37,7 +37,12 @@
                                 </li>
                             </ul>
                             <p class="text-center lead no-margin">
-                                {{'premiumPrice' | i18n : (price | currency:'$')}}
+                                <span *ngIf="canMakeMacAppStorePayments">
+                                    {{'premiumPrice' | i18n : appStoreFormattedPrice}}
+                                </span>
+                                <span *ngIf="!canMakeMacAppStorePayments">
+                                    {{'premiumPrice' | i18n : (price | currency:'$')}}
+                                </span>
                             </p>
                         </div>
                         <div *ngIf="isPremium">
@@ -51,11 +56,16 @@
                 <button type="button" class="primary" appBlurClick (click)="manage()" *ngIf="isPremium">
                     <b>{{'premiumManage' | i18n}}</b>
                 </button>
-                <button type="button" class="primary" appBlurClick (click)="purchase()" *ngIf="!isPremium">
+                <button #purchaseBtn type="button" class="primary" appBlurClick (click)="purchase()" *ngIf="!isPremium"
+                    [disabled]="purchaseBtn.loading" [appApiAction]="purchasePromise">
                     <b>{{'premiumPurchase' | i18n}}</b>
                 </button>
                 <button type="button" data-dismiss="modal">{{'close' | i18n}}</button>
                 <div class="right" *ngIf="!isPremium">
+                    <button #restoreBtn type="button" appBlurClick (click)="restore()" *ngIf="canRestorePurchase"
+                        [disabled]="restoreBtn.loading" [appApiAction]="restorePromise">
+                        {{'restore' | i18n}}
+                    </button>
                     <button #refreshBtn type="button" appBlurClick (click)="refresh()" [disabled]="refreshBtn.loading"
                         appA11yTitle="{{'premiumRefresh' | i18n}}" [appApiAction]="refreshPromise">
                         <i class="fa fa-refresh fa-lg fa-fw" [hidden]="refreshBtn.loading" aria-hidden="true"></i>

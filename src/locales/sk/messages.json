@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Filtre"
   },
   "allItems": {
     "message": "Všetky položky"
@@ -117,7 +117,7 @@
   },
   "toggleCollapse": {
     "message": "Prepnúť zloženie",
-    "description": "Toggling an expand\/collapse state."
+    "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
     "message": "Meno vlastníka karty"
@@ -301,7 +301,7 @@
     "message": "Hodnota"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Zoradiť presúvaním"
   },
   "cfTypeText": {
     "message": "Text"
@@ -310,7 +310,7 @@
     "message": "Skryté"
   },
   "cfTypeBoolean": {
-    "message": "Áno\/Nie"
+    "message": "Áno/Nie"
   },
   "remove": {
     "message": "Odstrániť"
@@ -371,11 +371,11 @@
     "message": "Oddeľovač slov"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Prvé písmeno veľkým",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Zahrnúť číslo"
   },
   "close": {
     "message": "Zavrieť"
@@ -748,7 +748,7 @@
     "message": "Odomknúť"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Prihlásený ako $EMAIL$ na $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -828,11 +828,11 @@
   },
   "clearClipboard": {
     "message": "Vymazať schránku",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
     "message": "Automaticky vymazať skopírované hodnoty zo schránky.",
-    "description": "Clipboard is the operating system thing where you copy\/paste data to on your device."
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
     "message": "Nezobrazovať ikony stránok"
@@ -993,7 +993,7 @@
     "message": "Ďakujeme za podporu Bitwarden."
   },
   "premiumPrice": {
-    "message": "Všetko len za $PRICE$\/rok!",
+    "message": "Všetko len za $PRICE$/rok!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1114,7 +1114,7 @@
   },
   "host": {
     "message": "Hostiteľ",
-    "description": "A URL's host value. For example, the host of https:\/\/sub.domain.com:443 is 'sub.domain.com:443'."
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
     "message": "Presný"
@@ -1148,14 +1148,14 @@
     "message": "Ukončiť"
   },
   "showHide": {
-    "message": "Zobraziť \/ Skryť",
+    "message": "Zobraziť / Skryť",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
     "message": "Skryť do systémovej lišty"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "Vždy na vrchu",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
@@ -1235,18 +1235,43 @@
     "message": "Pri reštarte zamknúť s hlavným heslom"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Predvoľby"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "Povoliť ikonu na paneli úloh"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "Vždy zobraziť ikonu na paneli úloh."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "Skryť do panela úloh"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "Musíte vybrať aspoň jednu zbierku."
+  },
+  "premiumUpdated": {
+    "message": "Povýšili ste na prémium."
+  },
+  "restore": {
+    "message": "Obnoviť"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "Predplatné môžete spravovať cez App Store. Chcete navštíviť App Store teraz?"
+  },
+  "legal": {
+    "message": "Právne informácie",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "Podmienky používania"
+  },
+  "privacyPolicy": {
+    "message": "Zásady ochrany osobných údajov"
+  },
+  "unsavedChangesConfirmation": {
+    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+  },
+  "unsavedChangesTitle": {
+    "message": "Unsaved Changes"
   }
 }

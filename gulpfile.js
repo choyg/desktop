@@ -6,6 +6,8 @@ const fs = require('fs');
 const paths = {
     cssDir: './src/css/',
     node_modules: './node_modules/',
+    dist: './dist/',
+    resources: './resources/',
 };
 
 function clean() {
